@@ -6,3 +6,6 @@ coverage/
 !.env.production
 !.env.demo
 *.tsbuildinfo
+.local/
+playwright-report/
+test-results/
