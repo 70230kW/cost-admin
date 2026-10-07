@@ -40,6 +40,7 @@ test('設定・絞り込み・EVの手動選択・再読み込み', async ({ pag
   await expect(page.getByText('該当する車両がありません')).toBeVisible();
   await page.getByRole('button', { name: '絞り込みを解除' }).click();
   await page.getByLabel('基準月').fill('2024-04');
+  await expect(page.getByText('2024年4月 ▦', { exact: true })).toBeVisible();
   await expect(page.getByText('7,508,250円', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: '設定', exact: true }).click();
   await page.getByLabel('会社名').fill('架空テスト会社');
